@@ -7,22 +7,95 @@
     <link rel="stylesheet" type="text/html" href="styles.css">
 </head>
 <body>
-    <header>
-        <div>
-            <nav><a style="text-decoration-line: line-through; text-decoration-color: white ;" href="">Tequilando Box</a></nav>
-        </div>
-        <nav>
-        <button id="home">HOME</button>
-        <button id="menu">MENU</button>
-        <button id="contact">CONTACT</button>
-        
-        </nav>
-    </header>
+    <div id="container">
 
-    <div id="content">
+       <div class="add-new">Click here to add new task
+        <br>
+        <button class="modal-btn">New Task</button>
+       </div>
+       <div class="modal">
         
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <!-- form  -->
+              <form action="" id="form">
+                <div class="form" >
+                    <label for="project">Select project:</label>
+                    <select id="project">
+                        <option value="work" >Work</option>
+                    </select>
+                </div>
+
+                <div class="form">
+                    <label for="titlename">Enter Name of Task</label>
+                    <input type="text" id="titlename" name="titlename" required>
+                </div>
+                <div class="form">
+                    <label for="descriptiontext">Enter Details</label>
+                    <!-- <textarea name="descriptiontext" id="descriptiontext" cols="25" rows="10"></textarea> -->
+                    <input type="text" id="descriptiontext" name="description">
+                </div>
+                <div class="form">
+                    <label for="date">Enter Date Due</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form">
+                    <label for="priority">Priority</label>
+                    <select name="priority" id="priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form">
+                        <input type="submit">
+                </div>
+              </form>
+            </div>
+          
+       </div>
+       <div class="display-current top">Project:
+       </div>
+       <!-- projects sidebar  -->
+       <div class="display-projects">Display list of projects here
+        <div class="project-sidebar">
+            <div class="sidebar-new">Work</div>
+        </div>
+        <button>Add new project folder</button>
+        <!-- modal two -->
+        <div class="modal-two">
+            <div class="modal-project">
+                <span class="close-two">&times;</span>
+                <div>
+                    <form action="" id="form-project">
+                        <div class="form" >
+                            <label for="projectname">New Project Name</label>
+                            <input type="text" name="projectname" id="projectname" placeholder="Folder name" required>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- main div content  -->
+       </div>
+       <div class="current-details">Display current project list here
+        <div class="current-details-div">
+            <div class="display-current">
+                <div class="project-text">Project:</div>
+                <div class="title">Title:</div>
+                <div class="description">Description:</div>
+                <div class="date">Date Due:</div>
+                <div class="priority">Importance: </div>
+           </div>
+        </div>
     </div>
-    <!-- <footer>M Exley 2025</footer> -->
-    <!-- no source required here -->
+   
+   
+   
+   
+   
+    </div>
+    
+
 </body>
 </html>

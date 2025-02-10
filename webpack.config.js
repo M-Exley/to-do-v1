@@ -33,7 +33,12 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
-      },     
+      },  
+      {
+        test: /\.json$/,
+        loader: 'json-loader',
+        type: 'javascript/auto' // Avoid Webpack's native JSON handling if you're using json-loader
+      }   
       
     ],
   },

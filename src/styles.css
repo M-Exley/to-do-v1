@@ -1,121 +1,185 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
-
-.fjalla-one-regular {
-    font-family: "Fjalla One", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-
 body {
-    background: rgb(0,104,71);
-    background: linear-gradient(90deg, rgba(0,104,71,1) 10%, rgba(255,255,255,1) 50%, rgba(201,0,22,1) 85%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin: 0;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 3fr;
+    gap: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.add-new {
+    background-color: grey;
+    border: 1px black solid; 
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 40px;
+}
+
+
+  .modal, 
+  .modal-two
+ {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
   
-/* 
-  #006847
-  #FFFFFF
-  #C90016 */
-header {
-    display: flex;
-    flex-direction: row;
-    gap: 400px;
-    justify-content: center;
-    gap: 40px;
-    font-size: large;
-}
-
-header div {
-    align-items: flex-start;
-}
-
-
-nav {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    font-family: 'Fjalla One', serif;
-    font-weight: 400;
-    font-size: x-large;
-    color: white;
-}
-
-button{
-    background-color: transparent;
-    border: 0px;
-    -webkit-text-stroke-color: black;
-    -webkit-text-stroke-width: 0.7px;
-    color: white;
-    font-family: 'Fjalla One', serif;
-    font-weight: 400;
-    font-size: x-large;
-    cursor: pointer;
-}
-#content {
-    border: 2px black solid;
-    width: 70%;
-    height: fit-content;
-    align-self: center;
-    margin-top: 12vh;
-    display: flex;
-    flex-direction: row;
-}
-
-.menucont {
-    border: 2px black solid;
-    width: 70%;
-    height: fit-content;
-    align-self: center;
-    align-items: center;
-    margin-top: 12vh;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
-.menudivs {
+  .modal-project {
+    height: 100px;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    margin-left: 100px;
-    margin-bottom: 20px;
-    width: fit-content;
-    /* border: 1px black solid; */
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
+    border: 1px solid #888;
+    width: 80%;
+
+  }
+
+  /* Modal Content/Box */
+  .modal-content
+ {
+  height: 300px;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close, 
+  .close-two {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus,
+  .close-two:hover,
+  .close-two:focus{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  /* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+  
+  /* Modal Body */
+  .modal-body {padding: 2px 16px;}
+  
+  /* Modal Footer */
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+  
+  /* Modal Content */
+  .modal-content, 
+  .modal-project {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    transform: translateY(40%)
+  }
+
+.form{
+  padding: 10px;
+  text-align: left;
+  margin: 5px;
 }
 
-.contact {
-    border: 2px black solid;
-    width: 70%;
-    height: fit-content;
-    align-self: center;
-    align-items: center;
-    margin-top: 12vh;
-    display: flex;
-    flex-direction: column;
+.display-current {
+    background-color: grey;
+    border: 1px black solid;
+    grid-column: 2 / 3;
+    grid-row: 1;
     
 }
 
-#map {
-    width: 100%;
-    height: 400px;
+.display-projects {
     background-color: grey;
-  }
-p {
-    font-family: 'Fjalla One', serif;
-    padding: 20px;
-    color: black;
-    font-weight: 500;
-    font-size: x-large;
-    text-align: left;
+    border: 1px black solid;
+    grid-column: 1;
+    grid-row: 2 / 4;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+    padding: 4px;
 }
 
-/* footer {
-    font-family: 'Fjalla One', serif;
-    position: absolute;
-    bottom: 0;
-    left: 47%;
-} */
+.project-sidebar {
+  width: 90%;
+  /* background-color: aquamarine; */
+  margin-left: 5px;
+}
+
+.sidebar-new {
+  font-size: large;
+  background-color: aquamarine;
+  border: black 1px solid;
+  margin: 2px 0px;
+}
+
+.sidebar-new:hover {
+  transform: scale(105%);
+  transform: translateX(10px);
+  cursor: pointer;
+}
+.project-list {
+    height: 30px;
+    width: max-content;
+    border: 1px black solid;
+}
+
+.current-details {
+    background-color: grey;
+    border: 1px black solid;
+    grid-column: 2;
+    grid-row: 2 / 4;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+
+}
+
+.current-details-div {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: fit-content;
+  border: 1px black solid; 
+  padding: 5px;
+  margin: 0px 2px;
+}
+
+.top {
+  font-size: 34px;
+  font-weight: bold;
+}

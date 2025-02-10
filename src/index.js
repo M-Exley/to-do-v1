@@ -1,14 +1,17 @@
 import "./styles.css";
 
-import onload  from "./home";
-import loadMenu from "./menu";
-import loadContact from "./contact"
+import onload  from "./onLoad";
+import { addNewProjectFolderModal } from "./newProjectFolder";
+import { displayProjectsSidebar } from "./displayProjects";
+import SubmitNewTask from './newTask'
+import newProjectFolderName  from "./newProjectFolder";
+import displayCurrentProjectItems from "./displayProjectItems";
 
 onload();
+addNewProjectFolderModal();
+displayProjectsSidebar();
+SubmitNewTask();
+newProjectFolderName();
+displayCurrentProjectItems();
 
 
-console.log("Hello")
-
-document.querySelector('#home').addEventListener('click', onload)
-document.querySelector('#menu').addEventListener('click', loadMenu)
-document.querySelector('#contact').addEventListener('click', loadContact)
